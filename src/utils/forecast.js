@@ -11,7 +11,7 @@ const forecast=(latitude,longitude,callback)=>{
         }else if(body.error){
             callback(body.error,undefined);
         }else{
-            const forecastData=body.daily.data[0].summary+  'High temparature :  '+body.daily.data[0].temperatureHigh+' degrees and Low temparature : '+body.daily.data[0].temperatureLow+ ' degrees. There is a '+ body.daily.data[0].precipProbability+' % Chance of rain.'
+            const forecastData=body.daily.data[0].summary+  'It is currently '+body.currently.temperature+' degrees out. Today High temperature : '+ body.daily.data[0].temperatureHigh+' and Low temperature : '+body.daily.data[0].temperatureLow +' There is a '+ body.daily.data[0].precipProbability+' % Chance of rain.'
             callback(undefined,{
                 summary            : body.daily.data[0].summary,
                 temperature        : body.currently.temperature,
